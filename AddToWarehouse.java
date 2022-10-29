@@ -2,15 +2,23 @@ import java.lang.Thread;
 
 public class AddToWarehouse extends Thread {
     InventoryTracking IT;
+    int bugFlag;
 
-    AddToWarehouse(InventoryTracking IT){
+    AddToWarehouse(InventoryTracking IT, int bugFlag){
         this.IT = IT;
+        this.bugFlag = bugFlag;
     }
 
     public void run(){
-        synchronized(IT){
+        if (bugFlag == 0){
+            synchronized(IT){
+                IT.increment();
+            }
+        }
+        else{ 
             IT.increment();
         }
     }
 }
+
 

@@ -9,9 +9,12 @@ public class InventoryMain {
                 numOfAdd = Integer.parseInt(args[0]); 
                 numOfRemove = Integer.parseInt(args[1]); 
                 bugFlag = Integer.parseInt(args[2]); 
-
+                if((bugFlag != 0) && (bugFlag != 1)){
+                    System.out.println("Bug flag is incorrect");
+                    System.exit(0);
+                }
                 InventoryTracking IT = new InventoryTracking();
-                Warehouse w = new Warehouse(IT);
+                Warehouse w = new Warehouse(IT, bugFlag);
                 w.doAllAdds(numOfAdd); // completing all add operations
                 w.doAllRemoves(numOfRemove);// completing all remove operations
                 
