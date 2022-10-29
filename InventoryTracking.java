@@ -10,4 +10,8 @@ public class InventoryTracking {
         inventorySize--;
         System.out.println("Removed. Inventory size = " + inventorySize);
     }
+
+    public int getInventorySize(){
+        return inventorySize;
+    }
 }

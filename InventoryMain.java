@@ -1,5 +1,5 @@
 public class InventoryMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         int numOfAdd;
         int numOfRemove;
         int bugFlag;
@@ -34,6 +34,10 @@ public class InventoryMain {
                         }
                     }
                 }
+                w.joinAllAdds();
+                w.joinAllRemoves();
+                System.out.println("Final inventory size = " + IT.getInventorySize());
+                
             } catch (NumberFormatException e) {
                 System.err.println("Argument" + args[0] + " must be an integer.");
                 System.exit(1);
