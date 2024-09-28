@@ -9,7 +9,6 @@ public class RemoveFromWarehouse extends Thread {
         this.bugFlag = bugFlag;
     }
 
-    //overriding Thread::run
     public void run(){
         if (bugFlag == 0){
             synchronized(IT){
